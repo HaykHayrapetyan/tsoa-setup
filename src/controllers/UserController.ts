@@ -16,9 +16,9 @@ export class UsersController extends Controller {
   @Get('{userId}')
   public async getUser(
     @Path() userId: number,
-    @Query() name?: string
+    // @Query() name?: string
   ): Promise<User> {
-    return new UsersService().get(userId, name)
+    return new UsersService().get(userId)
   }
 
   @SuccessResponse('201', 'Created') // Custom success response
